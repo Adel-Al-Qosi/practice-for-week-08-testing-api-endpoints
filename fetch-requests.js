@@ -10,7 +10,7 @@ Paste your code for fetch requests here once you finish each task.
 */
 
 // Your code here
-
+fetch('/posts').then(res => res.json()).then(resBody => console.log(resBody)).catch(err => console.error(err))
 
 
 /* =============================== Phase 2 ================================ */
@@ -20,3 +20,12 @@ Paste your code for fetch requests here once you finish each task.
 */
 
 // Your code here
+fetch('/posts', {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: "New Post!"
+  })
+}).then(res => console.log(res))
